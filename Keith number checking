@@ -1,0 +1,37 @@
+import java.io.*;
+class keith_number
+{
+    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+    void main()throws IOException
+    {
+        System.out.println("Enter a number");
+        String st=br.readLine();
+        int lt=st.length();
+        int n=Integer.valueOf(st);
+        int a[]=new int[lt];
+        int t=n,k=0,i=0;
+        for(i=lt-1;i>=0;i--)//storing numbers in an array of lt length
+        {
+            a[i]=t%10; t=t/10;
+        }
+        for(i=0;i<lt;i++)//print the digits of number
+            System.out.print(a[i]+", ");
+        int s=0,flag=0;
+        while(s<=n)
+        {
+            s=0;
+            for(i=0;i<lt;i++)
+                s=s+a[i];
+            System.out.print(s+", ");
+            for(i=0;i<lt-1;i++)
+                a[i]=a[i+1];
+            a[i]=s;
+            if(s==n)
+            {flag=1;break;}
+        }
+        if(flag==1)
+            System.out.println("\n"+"Yes it is a keith number");
+        else
+            System.out.println("\n"+"no it is not a keith number");
+    }
+}
