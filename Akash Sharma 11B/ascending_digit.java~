@@ -1,0 +1,18 @@
+class ascending_digit
+{
+    void main(int n)
+    {
+        int v=0;
+        for(int x=0;x<=9;x++)
+        {
+            v=n;
+            while(v>0)
+            {
+                int d=v%10;
+                if(d==x)
+                System.out.print(x);
+                v=v/10;
+            }
+        }
+    }
+}

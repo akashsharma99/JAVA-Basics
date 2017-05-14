@@ -1,0 +1,41 @@
+import java.io.*;
+class Prime_Number
+{
+    BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
+    int i,c,n;
+    Prime_Number()
+    {
+        i=1;c=0;n=0;
+    }//end of constructor
+    int prime(int v)            //check for prime
+    {
+        if(v%i==0)
+            c++;
+        i++;    
+        if(i<=v)
+            prime(v);
+        return c;
+    }//end of prime
+    void main()throws IOException
+    {
+        System.out.println("Enter a number");
+        n=Integer.parseInt(br.readLine());
+        c=prime(n);
+        if(c==2)
+        System.out.println("It is a Prime number");
+        else
+        System.out.println("It is not a Prime number");
+    }//end of main()
+}//end of Prime Number
+
+OUTPUT:-
+Enter a number
+97
+It is a Prime number
+
+VARIABLE LIST:-
+    Variable    Type        Description
+      i         int        control variable 
+      c         int        counter variable 
+      n         int        to store a number 
+      v         int        formal parameter

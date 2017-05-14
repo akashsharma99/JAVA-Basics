@@ -1,0 +1,44 @@
+import java.io.*;
+class dated
+{
+    BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
+    void main()throws IOException
+    {
+        System.out.print("Enter day number : ");
+        int d=Integer.parseInt(br.readLine());
+        System.out.print("Enter year : ");
+        int y=Integer.parseInt(br.readLine());
+        System.out.print("Date after : ");
+        int n=Integer.parseInt(br.readLine());
+        int dt=d,t=0;
+        int m[]={31,0,31,30,31,30,31,31,30,31,30,31};
+        String mm[]={"January","February","March","April","May","June","July","August","September","October","November","December"};
+        if(y%4==0)
+        { m[1]=29; t=366; }
+        else
+        { m[1]=28; t=365; }
+        int i=0;
+        while(dt>m[i])
+        {
+            dt=dt-m[i];
+            i++;
+        }
+        System.out.println(dt+" "+mm[i]+" "+y);
+        i=0;
+        dt=d+n;
+        if(dt>t)
+        {
+            y++;dt=dt-t;
+        }
+        if(y%4==0)
+            m[1]=29;
+        else
+            m[1]=28;
+        while(dt>m[i])
+        {
+            dt=dt-m[i];
+            i++;
+        }
+        System.out.println("Date after "+n+" days: "+dt+" "+mm[i]+" "+y);
+    }
+}

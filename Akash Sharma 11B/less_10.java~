@@ -1,0 +1,53 @@
+import java.io.*;
+class less_10
+{
+    BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
+    public String less10(int a)throws IOException
+    {
+        int n=a;
+        String r="";
+        if(n<=3)
+        {
+            for(int i=1;i<=n;i++)
+                r=r+"i";
+        }
+        if(n==4)
+            r="iv";
+        if(n>=5 && n<=8)
+        {
+            r="v";
+            for(int i=6;i<=n;i++)
+                r=r+"i";
+        }
+        if(n==9)
+            r="ix";
+        if(n>=10)
+            r="x";
+        return r;
+    }
+
+    public void less50()throws IOException
+    {
+        System.out.println("enter a 2 digit number less than 50");
+        int n=Integer.parseInt(br.readLine()),m=n;
+        String r="",r1="";
+
+        int ld=m%10;
+        m=m/10;
+        if(ld!=0)
+        {
+            r1=less10(ld);
+        }
+        if(m<=4)
+        {
+            for(int i=1;i<=m;i++)
+                r=r+"x";
+        }
+        r=r+r1;
+        if(m==5)
+        {
+            r="L"+r1;
+        }
+        System.out.println("thr roman equivalent is = "+r);
+    }
+}

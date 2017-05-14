@@ -1,0 +1,50 @@
+import java.util.*;
+class antimatrix
+{
+    static void main()
+    {
+        int matrix[][]=new int[16][16];
+        int n,i,j,ilncr,jlncr,num,k,m;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter number");
+        n=sc.nextInt();
+        if(n==1)
+        {
+            System.out.println();
+        }
+        else if(n%2==0)
+        {
+            i=0;j=0;ilncr=0;jlncr=1;
+        }
+        else
+        {
+            i=n-1;j=n-1;ilncr=0;jlncr=-1;
+        }
+        m=n;num=n*n;
+        while(num>0)
+        {
+            for(k=0;k<m;++k)
+            {
+                matrix[i][j]=num;--num;
+                i+=ilncr;j+=jlncr;
+            }
+            m--;i-=ilncr;j-=jlncr;
+            ilncr=jlncr;
+            jlncr=0;i+=ilncr;
+            for(k=0;k<m;++k)
+            {
+                matrix[i][j]=num;--num;i+=ilncr;j+=jlncr;
+            }
+            i-=ilncr;j-=jlncr;
+            jlncr=-ilncr;
+            ilncr=0;
+            j+=jlncr;
+        }
+        for(i=0;i<n;++i)
+        {
+            for(j=0;j<n;++j)
+            System.out.print(matrix[i][j]+"\t");
+            System.out.println();
+        }
+    }
+}

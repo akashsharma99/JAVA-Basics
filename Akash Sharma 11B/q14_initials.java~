@@ -1,0 +1,54 @@
+import java.io.*;
+class q14_initials
+{
+    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+    void main()throws IOException
+    {
+        System.out.println("1)S.C.Bose");
+        System.out.println("2)Bose,S.C.");
+        System.out.println("3)S.C.B.");
+        System.out.println("Enter your choice of initials");
+        int c=Integer.parseInt(br.readLine());
+        System.out.println("enter your name in three words");
+        String st=br.readLine();
+        char ch=' ';
+        int l=st.length();
+        String s="";
+        switch(c)
+        {
+            case 1: st=" "+st;
+            for(int i=0;i<l;i++)
+            {
+                ch=st.charAt(i);
+                if(ch==' ' && i!=st.lastIndexOf(' '))
+                {
+                    s=s+st.charAt(i+1)+".";
+                }
+                else if(i>st.lastIndexOf(' '))
+                    s=s+ch;
+            }
+            break;
+            case 2:
+            for(int i=0;i<l;i++)
+            {
+                ch=st.charAt(i);
+                if(ch!=' ' && i<st.indexOf(' '))
+                s=s+ch;
+                if(i==st.indexOf(' '))
+                s=s+",";
+                if(ch==' ')
+                s=s+st.charAt(i+1)+".";
+            }
+            break;
+            case 3:st=" "+st;
+            for(int i=0;i<l;i++)
+            {
+                ch=st.charAt(i);
+                if(ch==' ')
+                s=s+st.charAt(i+1)+".";
+            }
+            break;
+        }
+        System.out.println("Initials = "+s);
+    }
+}

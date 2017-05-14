@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ main()
+comment1.params=x
+comment1.target=void\ getBinary(long)
+comment2.params=x
+comment2.target=void\ getOctal(long)
+comment3.params=x
+comment3.target=void\ getHexadecimal(long)
+numComments=4

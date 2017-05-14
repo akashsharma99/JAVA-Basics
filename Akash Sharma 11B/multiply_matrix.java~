@@ -1,0 +1,51 @@
+import java.io.*;
+class multiply_matrix
+{
+    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+    void main()throws IOException
+    {
+        int x=0,y=0,k=0,sum=0;
+        System.out.print("1st matrix row number? =");
+        int r1=Integer.parseInt(br.readLine());
+        System.out.print("1st matrix column number? =");
+        int c1=Integer.parseInt(br.readLine());
+        int m1[][]=new int[r1][c1];
+        System.out.println("Enter elements of 1st matrix");
+        for(x=0;x<r1;x++)
+        {
+            for(y=0;y<c1;y++)
+            m1[x][y]=Integer.parseInt(br.readLine());
+        }
+        System.out.print("2nd matrix row number? =");
+        int r2=Integer.parseInt(br.readLine());
+        System.out.print("2nd matrix column number? =");
+        int c2=Integer.parseInt(br.readLine());
+        int m2[][]=new int[r2][c2];
+        System.out.println("Enter elements of 2nd matrix");
+        for(x=0;x<r2;x++)
+        {
+            for(y=0;y<c2;y++)
+            m2[x][y]=Integer.parseInt(br.readLine());
+        }
+        int result[][]=new int[r1][c2];
+        for(x=0;x<r1;x++)
+        {
+            for(y=0;y<c2;y++)
+            {
+                for(k=0;k<r2;k++)
+                {
+                    sum=sum+m1[x][k]*m2[k][y];
+                }
+                result[x][y]=sum;
+                sum=0;
+            }
+        }
+        System.out.println("result");
+        for(x=0;x<r1;x++)
+        {
+            for(y=0;y<c2;y++)
+            System.out.print(result[x][y]+"\t");
+            System.out.println();
+        }
+    }
+}

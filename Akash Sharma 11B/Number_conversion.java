@@ -1,0 +1,83 @@
+import java.io.*;
+class Number_conversion
+{
+    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+    void main()throws IOException
+    {
+        System.out.println("Enter a Decimal Number");
+        long n=Long.valueOf(br.readLine());  //input a decimal number
+        System.out.println("Convert into:-");
+        System.out.println("1.Binary");
+        System.out.println("2.Octal");
+        System.out.println("3.Hexadecimal");
+        System.out.println("Enter your choice");
+        int ch=Integer.valueOf(br.readLine());
+        switch(ch)
+        {
+            case 1:getBinary(n);break;
+            case 2:getOctal(n);break;
+            case 3:getHexadecimal(n);break;
+            default:System.out.println("wrong choice!! try again");
+        }
+    }
+    void getBinary(long x)//conversion of decimal to binary
+    {
+        long cp=x;
+        String st="";
+        while(cp!=0)
+        {
+            st=(cp%2)+st;
+            cp=cp/2;
+        }
+        System.out.println(st);
+    }
+    void getOctal(long x)//conversion of decimal to octal
+    {
+        long cp=x;
+        String st="";
+        while(cp!=0)
+        {
+            st=(cp%8)+st;
+            cp=cp/8;
+        }
+        System.out.println(st);
+    }
+    void getHexadecimal(long x)//conversion of decimal to hexadecimal
+    {
+        String hex[]={"A","B","C","D","E","F"};
+        long cp=x,d=0;int i=0;
+        String st="";
+        while(cp!=0)
+        {
+            d=cp%16;i=(int)d%10;
+            if(d<10)
+            st=d+st;
+            else
+            st=hex[i]+st;
+            cp=cp/16;
+        }
+        System.out.println(st);
+    }
+}//end of Number_conversion
+
+OUTPUT:-
+Enter a Decimal Number
+2584
+Convert into:-
+1.Binary
+2.Octal
+3.Hexadecimal
+Enter your choice
+3
+A18
+
+VARIABLE LIST:-
+    Variable    Type        Description
+       n        long      to accept and store a number
+       ch       int       to store a choice from menu 
+       x        long      formal parameters for number  
+       cp       long      to store copy of the number  
+       st       String    to store new number  
+       i        int       to store position of hex number  
+       d        long      to store remainder  
+      hex[]     String    to store hex array  

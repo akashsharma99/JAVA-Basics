@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Armstrong_Number()
+comment1.params=v\ x
+comment1.target=int\ sum(int,\ int)
+comment2.params=num
+comment2.target=void\ main(int)
+numComments=3

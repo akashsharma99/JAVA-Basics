@@ -1,0 +1,23 @@
+import java.io.*;
+class q5
+{
+    BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
+    void main()throws IOException
+    {
+        System.out.println("Enter a number");
+        int n=Integer.parseInt(br.readLine());
+        int a=1;
+        int cp=n;
+        while(cp!=0)
+        {
+            a=a*10;cp=cp/10;
+        }
+        System.out.println("a"+a);
+        int k=(n*n)%a;
+        System.out.println("k"+k);
+        if(k==n)
+        System.out.println("yes automorphic number");
+        else
+        System.out.println("No not an automorphic number");
+    }
+}

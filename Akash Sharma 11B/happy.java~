@@ -1,0 +1,24 @@
+class happy
+{
+    void main(int n)
+    {
+        int s=0,x=n;
+        while(true)
+        {
+            s=0;
+            while(x!=0)
+            {
+                int ld=x%10;
+                s=s+(ld*ld);
+                x=x/10;
+            }
+            if(s<10)
+            break;
+            x=s;
+        }
+        if(s==1)
+        System.out.println("Happy number");
+        else
+        System.out.println("not a happy number");
+    }
+}

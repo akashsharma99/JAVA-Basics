@@ -1,0 +1,65 @@
+import java.util.*;
+class Composite_Magic_Number
+{
+    void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter lower limit");
+        int m=sc.nextInt();         //input range of numbers
+        System.out.println("Enter upper limit");
+        int n=sc.nextInt();
+        int a,c,s;
+        System.out.println("The composite magic numbers are");
+        for(int i=m;i<=n;i++)       //finding composite magic numbers
+        {
+            a=i;c=0;s=0;
+            for(int j=2;j<i;j++)
+            {
+                if(i%j==0)
+                c++;
+            }
+            if(c>0)                 
+            {
+                do
+                {
+                    s=0;
+                    while(a!=0)
+                    {
+                        int d=a%10;
+                        s=s+d;
+                        a=a/10;
+                    }
+                    a=s;
+                }while(s>9);
+                if(s==1)
+                System.out.println(i);
+            }
+        }//end of loop
+    }//end of main()
+}//end of Composite_Magic_Number
+
+OUTPUT:-
+Enter lower limit
+10
+Enter upper limit
+100
+The composite magic numbers are
+10
+28
+46
+55
+64
+82
+91
+100
+
+VARIABLE LIST:-
+    Variable    Type        Description
+      m         int        to store lower limit 
+      n         int        to store upper limit 
+      a         int        to store a number 
+      c         int        counter variable 
+      s         int        to store sum of digits  
+      i         int        control variable 
+      j         int        control variable 
+      d         int        to store digits of the number

@@ -1,0 +1,23 @@
+import java.io.*;
+class Kaprakar
+{
+    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+    void main()throws IOException
+    {
+        System.out.println("enter a number");
+        String st=br.readLine();
+        int n=Integer.valueOf(st);
+        int sq=n*n;
+        String sst=String.valueOf(sq);
+        int c=sst.length();
+        String s1=sst.substring(0,c/2);
+        String s2=sst.substring(c/2);
+        int n1=Integer.valueOf(s1);
+        int n2=Integer.valueOf(s2);
+        int s=n1+n2;
+        if(s==n)
+        System.out.println("Yes it is a kaprakar number");
+        else
+        System.out.println("No it is not a kaprakar number");
+    }
+}

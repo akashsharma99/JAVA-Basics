@@ -1,0 +1,110 @@
+import java.io.*;
+class NumberSystem
+{
+    BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
+    void main()throws IOException
+    {
+        System.out.println("Enter base of your number");
+        int base=Integer.parseInt(br.readLine());
+        if(base!=2 && base!=10 && base!=8 && base!=16)
+            System.out.println("wrong base!! Try again.");
+        else
+        {
+            System.out.println("Enter a number of base "+base);
+            long n;String h;
+            if(base==16)
+            {
+                h=br.readLine();
+                hexadecimal(h);
+            }
+            else
+            {   n=Long.parseLong(br.readLine());
+                if(base==2)
+                    binary(n);
+                else if(base==10)
+                    decimal(n);
+                else
+                    octal(n);
+            }
+        }
+    }
+    void binary(long x)
+    {
+        String hex[]={"A","B","c","D","E","F"};
+        long cp=x,s=0,d=0;int i=0;
+        String st="";
+        while(cp!=0)
+        {
+            d=cp%10;
+            s=(int)(s+(Math.pow(2,i)*d));
+            cp=cp/10;i++;
+        }
+        System.out.println("Decimal:- "+s);
+        cp=s;
+        while(cp!=0)
+        {
+            st=(cp%8)+st;
+            cp=cp/8;
+        }
+        System.out.println("Octal:- "+st);
+        cp=s;st="";
+        while(cp!=0)
+        {
+            d=cp%16;i=(int)d%10;
+            if(d<10)
+            st=d+st;
+            else
+            st=hex[i]+st;
+            cp=cp/16;
+        }
+        System.out.println("Hexadecimal:- "+st);
+    }
+    void decimal(long x)
+    {
+        String hex[]={"A","B","c","D","E","F"};
+        long cp=x,d=0;int i=0;
+        String st="";
+        while(cp!=0)
+        {
+            st=(cp%2)+st;
+            cp=cp/2;
+        }
+        System.out.println("Binary:- "+st);
+        cp=x;st="";
+        while(cp!=0)
+        {
+            st=(cp%8)+st;
+            cp=cp/8;
+        }
+        System.out.println("Octal:- "+st);
+        cp=x;st="";
+        while(cp!=0)
+        {
+            d=cp%16;i=(int)d%10;
+            if(d<10)
+            st=d+st;
+            else
+            st=hex[i]+st;
+            cp=cp/16;
+        }
+        System.out.println("Hexadecimal:- "+st);
+    }
+    void hexadecimal(String y)
+    {
+        
+    }
+    void octal(long x)
+    {
+        String hex[]={"A","B","c","D","E","F"};
+        long cp=x,s=0,d=0;int i=0;
+        String st="";char ch='A';st=""+ch;
+        while(cp!=0)
+        {
+            d=cp%10;
+            s=(long)(s+(Math.pow(8,i)*d));
+            cp=cp/10;i++;
+        }
+        System.out.println("Decimal:- "+s);
+        cp=s;
+    }
+}

@@ -1,0 +1,20 @@
+import java.io.*;
+class Automorphic
+{
+    BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
+    void main()throws IOException
+    {
+        System.out.print("enter a number - ");
+        int n=Integer.parseInt(br.readLine());
+        int s=n*n;
+        String a=String.valueOf(n);
+        String b=String.valueOf(s);
+        int at=a.length();
+        int bt=b.length();
+        String c=b.substring(bt-at);
+        if(c.equals(a))
+        System.out.println("yes it is an automorphic number");
+        else
+        System.out.println("not an automorphic number");
+    }
+}

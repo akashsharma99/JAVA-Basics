@@ -1,0 +1,21 @@
+class highest_digit
+{
+    void main(int n)
+    {
+        int v=0,c=0,h=0;
+        for(int i=0;i<10;i++)
+        {
+            v=n;c=0;
+            while(v>0)
+            {
+                int d=v%10;
+                if(d==i)
+                c++
+                v=v/10;
+            }
+            if(c>0 && i>h)
+            h=i;
+        }
+        System.out.println("high = "+h);
+    }
+}

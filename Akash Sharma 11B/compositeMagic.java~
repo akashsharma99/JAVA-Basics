@@ -1,0 +1,32 @@
+class compositeMagic
+{
+    void main(int m,int n)
+    {
+        int a,c,s;
+        for(int i=m;i<=n;i++)
+        {
+            a=i;c=0;s=0;
+            for(int j=2;j<i;j++)
+            {
+                if(i%j==0)
+                c++;
+            }
+            if(c>0)
+            {
+                do
+                {
+                    s=0;
+                    while(a!=0)
+                    {
+                        int d=a%10;
+                        s=s+d;
+                        a=a/10;
+                    }
+                    a=s;
+                }while(s>9);
+                if(s==1)
+                System.out.println(i);
+            }
+        }
+    }
+}

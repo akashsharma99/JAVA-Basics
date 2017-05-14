@@ -1,0 +1,25 @@
+class armstrong
+{
+    int s,n;
+    armstrong()
+    {
+        s=0;n=0;
+    }
+    int sum(int v,int x)
+    {
+        x=x+((v%10)*(v%10)*(v%10));
+        v=v/10;
+        if(v>0)
+            x=sum(v,x);
+        return x;
+    }
+    void main(int num)
+    {
+        n=num;
+        s=sum(n,s);
+        if(s==n)
+            System.out.println("it is an armstrong number");
+        else
+            System.out.println("it is not an armstrong number");
+    }
+}

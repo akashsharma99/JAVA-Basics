@@ -1,0 +1,29 @@
+import java.io.*;
+class perfect
+{
+    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+    int i,s,n;
+    perfect()
+    {
+        i=1;s=0;n=0;
+    }
+    int sum(int v)
+    {
+        if(v%i==0)
+        s=s+i;
+        i++;
+        if(i<v)
+        s=sum(v);
+        return s;
+    }
+    void main()throws IOException
+    {
+        System.out.println("enter a number");
+        n=Integer.parseInt(br.readLine());
+        s=sum(n);
+        if(s==n)
+        System.out.println("Yes, it is a perfect number");
+        else
+        System.out.println("No, it is not a perfect number");
+    }
+}
