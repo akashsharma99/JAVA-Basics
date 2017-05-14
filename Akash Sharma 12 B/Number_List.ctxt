@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Number_List()
+comment1.params=
+comment1.target=void\ createList()
+comment2.params=
+comment2.target=void\ displayList()
+comment3.params=
+comment3.target=void\ search()
+comment4.params=
+comment4.target=void\ cntPrime()
+comment5.params=
+comment5.target=void\ cntPalindrome()
+comment6.params=
+comment6.target=void\ cntPerfect()
+comment7.params=
+comment7.target=void\ main()
+numComments=8

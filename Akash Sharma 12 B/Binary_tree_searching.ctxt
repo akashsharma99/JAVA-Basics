@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=s\ p
+comment0.target=node10\ create(node10,\ node10)
+comment1.params=rt\ data
+comment1.target=int\ find(node10,\ int)
+comment2.params=
+comment2.target=void\ main()
+numComments=3

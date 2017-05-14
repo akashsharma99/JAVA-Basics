@@ -1,0 +1,18 @@
+import java.util.*;
+class node
+{
+    int n;node nxt;
+    node()
+    {
+        n=0;nxt=null;
+    }
+    void input()
+    {
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+    }
+    void display()
+    {
+        System.out.println(n);
+    }
+}//end of node

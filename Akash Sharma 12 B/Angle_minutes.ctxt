@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Angle_minutes()
+comment1.params=
+comment1.target=void\ input()
+comment2.params=a1\ a2
+comment2.target=Angle_minutes\ sum_angle(Angle_minutes,\ Angle_minutes)
+comment3.params=
+comment3.target=void\ display()
+comment4.params=
+comment4.target=void\ main()
+numComments=5
